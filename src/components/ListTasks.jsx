@@ -4,37 +4,42 @@ import Card from "@mui/material/Card";
 import CardContentUser from "./CardContentUser";
 
 //Mapeo los usuarios en una lista de cards
-const ListTasks = ({users}) => {
+const ListTasks = ({tasks}) => {
 
   return (
     <Fragment>
       <div id="external-events">
-        {users.map((singleUser, index) => (
+        {tasks.map((singleTask, index) => (
+
+          /*Enmaquetacion*/
           <Card
             key={index}
             className="fc-event"
-            title={singleUser.nombre}
-            id={singleUser.idus}
-            color={singleUser.color}
+            title={singleTask.nombre}
+            id={singleTask.idus}
+            color={singleTask.color}
             sx={{
               display: "flex",
               width: "100%",
             }}
             variant="outlined"
           >
+            
             <Box
-              sx={{ display: "flex", flexDirection: "column", width: "90%" }}
+              sx={{ flexDirection: "column", width: "90%" }}
             >
-              <CardContentUser user={singleUser} />
+              <CardContentUser task={singleTask} />
             </Box>
+            
             <Box
               sx={{
-                display: "flex",
                 flexDirection: "column",
-                bgcolor: `#${singleUser.color}`,
+                bgcolor: `#${singleTask.color}`,
                 width: "10%",
               }}
-            ></Box>
+            >
+            </Box>
+
           </Card>
         ))}
       </div>

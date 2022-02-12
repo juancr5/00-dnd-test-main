@@ -3,23 +3,24 @@ import CardContent from "@mui/material/CardContent";
 import { Grid } from "@mui/material";
 
 //Componente que contiene el contenido de las cards de cada usuario
-const CardContentUser = ({user}) => {
+const CardContentUser = ({task}) => {
   return (
     
       <CardContent>
-          {user.nombre.toUpperCase()}
+          {"- " + task.nombre}
       
         <Grid container>
           <Grid item xs={9}>
-              Dias planificados
+              Oficina:
               <br/>
-              Cant. tiendas planificados
+              Hora:
+              
           </Grid>
 
           <Grid item xs={3}>
-              {user.dias_plani}
+              {task.oficina}
             <br/>
-              {user.tiendas_plani}
+              {task.hora}
           </Grid>
         </Grid>
       </CardContent>
